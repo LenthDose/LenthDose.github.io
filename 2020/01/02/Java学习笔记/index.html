@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="键盘选择：方向键+shift； 注释：ctrl+&#x2F; 读用户输入：Scanner in &#x3D;  new Scanner (System in); System .out.printfln(in.nextLine()); Scan加上Alt和&#x2F;，程序会有选项； Final加上为常量； 强制类型转换 （定义类型）加上 length 数组的元素数量 定义数组变量  &lt;类型&gt;[]&lt;名字&amp;gt">
+<meta name="description" content="键盘选择：方向键+shift； 注释：ctrl+&#x2F;  读用户输入：Scanner in &#x3D;  new Scanner (System in);  输出：System .out.printfln(in.nextLine());   Scan加上Alt和&#x2F;，程序会有选项； Final加上为常量； 强制类型转换 （定义类型）加上  数组  length 数组的元素数量 定义数组变量  &lt;类型&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习笔记">
 <meta property="og:url" content="http://yoursite.com/2020/01/02/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="LenthDose">
-<meta property="og:description" content="键盘选择：方向键+shift； 注释：ctrl+&#x2F; 读用户输入：Scanner in &#x3D;  new Scanner (System in); System .out.printfln(in.nextLine()); Scan加上Alt和&#x2F;，程序会有选项； Final加上为常量； 强制类型转换 （定义类型）加上 length 数组的元素数量 定义数组变量  &lt;类型&gt;[]&lt;名字&amp;gt">
+<meta property="og:description" content="键盘选择：方向键+shift； 注释：ctrl+&#x2F;  读用户输入：Scanner in &#x3D;  new Scanner (System in);  输出：System .out.printfln(in.nextLine());   Scan加上Alt和&#x2F;，程序会有选项； Final加上为常量； 强制类型转换 （定义类型）加上  数组  length 数组的元素数量 定义数组变量  &lt;类型&amp;gt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-02T04:27:10.000Z">
-<meta property="article:modified_time" content="2020-01-03T05:41:01.396Z">
+<meta property="article:modified_time" content="2020-01-03T08:32:06.205Z">
 <meta property="article:author" content="Silhouette">
 <meta name="twitter:card" content="summary">
 
@@ -301,18 +301,42 @@
       
         <p>键盘选择：方向键+shift；</p>
 <p>注释：ctrl+/</p>
-<p>读用户输入：Scanner in =  new Scanner (System in);</p>
-<p>System .out.printfln(in.nextLine());</p>
+<ul>
+<li><p>读用户输入：Scanner in =  new Scanner (System in);</p>
+</li>
+<li><p>输出：System .out.printfln(in.nextLine());</p>
+</li>
+</ul>
 <p>Scan加上Alt和/，程序会有选项；</p>
 <p>Final加上为常量；</p>
 <p>强制类型转换 （定义类型）加上</p>
+<ul>
+<li><strong>数组</strong></li>
+</ul>
 <p>length 数组的元素数量</p>
 <p>定义数组变量  &lt;类型&gt;[]&lt;名字&gt;=new &lt;类型&gt;[元素个数]</p>
 <p>new创建的数组会得到默认的0值</p>
 <p>数组名.length 可得到数组的数量</p>
 <p>包裹类型</p>
 <p>当需要一个类或一个对象做事情的时候，用.运算符</p>
-<p><strong>字符串</strong></p>
+<ul>
+<li><strong>字符串</strong></li>
+</ul>
+<p>String s = new String (“”) </p>
+<p>String s应该用.equals来比较 equals比较的是String所管理的内容</p>
+<p>获得String的长度 用length()函数</p>
+<p>访问String里的字符 s.charAt(index)</p>
+<p>得到子串   s.substring (n) n号位置到末尾的全部内容</p>
+<p>​                   s.sbustring(b,e) 从b号位置到e号位置之前的内容</p>
+<ul>
+<li><strong>寻找字符</strong></li>
+</ul>
+<p>s.indexOf(c)  得到c字符所在的位置，-1表示不存在</p>
+<p>s.indexOf(c,n)   从n号位置开始寻找c字符</p>
+<p>从右边开始找  s.lastIndexOf(c)</p>
+<p>比较大小 CompareTo(c)</p>
+<p>当函数期望的参数类型比调用函数是给的值的类型宽的时候，编译器会帮你转换好</p>
+<p>char&gt;int&gt;double</p>
 
       
     </div>
