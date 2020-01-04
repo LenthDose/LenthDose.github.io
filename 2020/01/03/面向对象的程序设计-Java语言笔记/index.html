@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="LenthDose">
 <meta property="og:description" content="类是规范，根据类的定义来创建对象 类：就是Java的类型，可以用来定义变量 对象&#x3D;属性+服务 数据：属性或状态 操作：函数 把数据和对数据的操作放在一起—&gt;封装 定义类和定义变量类似，没有什么不同 OOP特性 一切都是对象  程序就是一堆互相发送消息的对象  每个对象都有自己的存储空间，里面是其他的对象  每个对象都有一个类型  所有属于某个特定类型的对象可以提供相同的服务   成员变量 类">
 <meta property="article:published_time" content="2020-01-03T13:46:19.000Z">
-<meta property="article:modified_time" content="2020-01-03T14:07:22.114Z">
+<meta property="article:modified_time" content="2020-01-04T08:29:58.697Z">
 <meta property="article:author" content="Lenth Dose">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -344,8 +344,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-01-03T22:07:22+08:00">
-                2020-01-03
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-04T16:29:58+08:00">
+                2020-01-04
               </time>
             
           </span>
@@ -405,16 +405,48 @@
 <li><p>在函数中可以直接写成员变量的名字来访问成员变量</p>
 </li>
 <li><p>函数是通过对象来调用的</p>
-</li>
+<h5 id="定义初始化"><a href="#定义初始化" class="headerlink" title="定义初始化"></a>定义初始化</h5><ul>
+<li>成员变量在定义的地方就可以给出初始值</li>
+<li>没有给出初始值的成员变量会自动获得0值</li>
+<li>对象变量的0值表示没有管理任何对象，也可以主动给null值</li>
+<li>定义初始化可以调用函数，甚至可以使用已经定义的成员变量</li>
 </ul>
-<ul>
-<li>this是成员函数的一个特殊的固有的本地变量，它表达了调用这个函数的那个对象</li>
+</li>
+<li><p>this是成员函数的一个特殊的固有的本地变量，它表达了调用这个函数的那个对象</p>
+</li>
 </ul>
 <h4 id="本地变量"><a href="#本地变量" class="headerlink" title="本地变量"></a>本地变量</h4><ul>
 <li>定义在函数内部的变量是本地变量</li>
 <li>本地变量的生存期和作用域都是函数内部</li>
 <li>成员变量的生存期是对象的生存期，作用域是类内部的成员函数</li>
 </ul>
+<h4 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h4><ul>
+<li>一个类可以有多个构造函数，只要它们的参数表不同</li>
+<li>创建对象的时候给出不同的参数值，就会自动调用不同的构造函数</li>
+<li>通过this()还可以调用其他的构造函数</li>
+<li>一个类里的同名单参数表不同的函数构成了重载关系</li>
+</ul>
+<h6 id="对象和对象之间的联系"><a href="#对象和对象之间的联系" class="headerlink" title="对象和对象之间的联系"></a>对象和对象之间的联系</h6><p>对象和对象之间的联系紧密程度叫做耦合，对象和对象的耦合程度越紧，表现在源代码上，就是它们的代码是互相依赖的、互相牵制的。</p>
+<p>我们理想的模型，是对象和对象之间的耦合要尽可能的松，平行的对象要尽量减少直接联系，让更高层次的对象来提供通信服务。</p>
+<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><p>所有的成员变量必须是private的，这样就避免别人随意使用你的内部数据；</p>
+<p>所有public的函数，只是用来实现这个类的对象或类自己要提供的服务的，而不是用来直接访问数据的。</p>
+<p>没有private或public的变量或函数是friendly的，但是只可在同一个包的类内访问</p>
+<h5 id="private"><a href="#private" class="headerlink" title="private"></a>private</h5><ul>
+<li>只有这个类的内部可以访问</li>
+<li>类内部指类的成员函数和定义初始化</li>
+<li>这个限制是对类的而不是对对象的</li>
+</ul>
+<p>private定义的成员变量只能在它所在的类中访问调用，在类外，当以它所在的类定义对象后，无法通过其对象名调用其私有的成员变量或成员函数</p>
+<h5 id="public"><a href="#public" class="headerlink" title="public"></a>public</h5><ul>
+<li>任何人都可以访问</li>
+<li>任何人指的是在任何类的函数或定义初始化中可以使用</li>
+<li>使用指的是调用、访问或定义变量</li>
+</ul>
+<h4 id="包"><a href="#包" class="headerlink" title="包"></a>包</h4><p>包就是Java的类库管理机制，它借助文件系统的目录来管理类库，一个包就是一个目录，一个包内的所有类必须放在一个目录下，那个目录的名字必须是包的名字</p>
+<h4 id="类变量和类函数"><a href="#类变量和类函数" class="headerlink" title="类变量和类函数"></a>类变量和类函数</h4><p>类是描述，对象是实体。在类里所描述的成员变量，是位于这个类的每一个对象中的。</p>
+<p>而如果某个成员有static关键字作修饰，它就不再属于每一个对象，而是属于整个类的了。</p>
+<p>通过每个对象都可以访问到这些类变量和类函数，但是也可以通过类的名字来访问它们。</p>
+<p>类函数由于不属于任何对象，因此也没有办法建立与调用它们的对象的关系，就不能访问任何非static的成员变量和成员函数了。</p>
 
       
     </div>
@@ -580,7 +612,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义初始化"><span class="nav-number">2.1.</span> <span class="nav-text">定义初始化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对象和对象之间的联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">对象和对象之间的联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#private"><span class="nav-number">5.1.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#public"><span class="nav-number">5.2.</span> <span class="nav-text">public</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包"><span class="nav-number">6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类变量和类函数"><span class="nav-number">7.</span> <span class="nav-text">类变量和类函数</span></a></li></ol></div>
             
 
           </div>
