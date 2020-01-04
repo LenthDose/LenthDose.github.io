@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="LenthDose">
 <meta property="og:description" content="类是规范，根据类的定义来创建对象 类：就是Java的类型，可以用来定义变量 对象&#x3D;属性+服务 数据：属性或状态 操作：函数 把数据和对数据的操作放在一起—&gt;封装 定义类和定义变量类似，没有什么不同 OOP特性 一切都是对象  程序就是一堆互相发送消息的对象  每个对象都有自己的存储空间，里面是其他的对象  每个对象都有一个类型  所有属于某个特定类型的对象可以提供相同的服务   成员变量 类">
 <meta property="article:published_time" content="2020-01-03T13:46:19.000Z">
-<meta property="article:modified_time" content="2020-01-04T08:29:58.697Z">
+<meta property="article:modified_time" content="2020-01-04T15:20:15.701Z">
 <meta property="article:author" content="Lenth Dose">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -344,7 +344,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-01-04T16:29:58+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-04T23:20:15+08:00">
                 2020-01-04
               </time>
             
@@ -447,6 +447,18 @@
 <p>而如果某个成员有static关键字作修饰，它就不再属于每一个对象，而是属于整个类的了。</p>
 <p>通过每个对象都可以访问到这些类变量和类函数，但是也可以通过类的名字来访问它们。</p>
 <p>类函数由于不属于任何对象，因此也没有办法建立与调用它们的对象的关系，就不能访问任何非static的成员变量和成员函数了。</p>
+<h4 id="容器类"><a href="#容器类" class="headerlink" title="容器类"></a>容器类</h4><ul>
+<li><p>ArrayList&lt;String&gt; notes = new ArrayList&lt;Strings&gt;</p>
+<h5 id="容器类有两个类型"><a href="#容器类有两个类型" class="headerlink" title="容器类有两个类型"></a>容器类有两个类型</h5></li>
+<li><p>容器的类型</p>
+</li>
+<li><p>元素的类型</p>
+</li>
+</ul>
+<h5 id="对象数组"><a href="#对象数组" class="headerlink" title="对象数组"></a>对象数组</h5><p>当数组的元素的类型是类的时候，数组的每一个元素其实只是对象的管理者而不是对象本身。因此，仅仅创建数组并没有创建其中的每一个对象</p>
+<ul>
+<li>对象数组中的每个元素都是对象的管理者而并非对象本身</li>
+</ul>
 
       
     </div>
@@ -612,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义初始化"><span class="nav-number">2.1.</span> <span class="nav-text">定义初始化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对象和对象之间的联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">对象和对象之间的联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#private"><span class="nav-number">5.1.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#public"><span class="nav-number">5.2.</span> <span class="nav-text">public</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包"><span class="nav-number">6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类变量和类函数"><span class="nav-number">7.</span> <span class="nav-text">类变量和类函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义初始化"><span class="nav-number">2.1.</span> <span class="nav-text">定义初始化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对象和对象之间的联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">对象和对象之间的联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#private"><span class="nav-number">5.1.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#public"><span class="nav-number">5.2.</span> <span class="nav-text">public</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包"><span class="nav-number">6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类变量和类函数"><span class="nav-number">7.</span> <span class="nav-text">类变量和类函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器类"><span class="nav-number">8.</span> <span class="nav-text">容器类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#容器类有两个类型"><span class="nav-number">8.1.</span> <span class="nav-text">容器类有两个类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象数组"><span class="nav-number">8.2.</span> <span class="nav-text">对象数组</span></a></li></ol></li></ol></div>
             
 
           </div>
