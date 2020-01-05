@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="LenthDose">
 <meta property="og:description" content="类是规范，根据类的定义来创建对象 类：就是Java的类型，可以用来定义变量 对象&#x3D;属性+服务 数据：属性或状态 操作：函数 把数据和对数据的操作放在一起—&gt;封装 定义类和定义变量类似，没有什么不同 OOP特性 一切都是对象  程序就是一堆互相发送消息的对象  每个对象都有自己的存储空间，里面是其他的对象  每个对象都有一个类型  所有属于某个特定类型的对象可以提供相同的服务   成员变量 类">
 <meta property="article:published_time" content="2020-01-03T13:46:19.000Z">
-<meta property="article:modified_time" content="2020-01-05T06:58:44.956Z">
+<meta property="article:modified_time" content="2020-01-05T15:11:41.609Z">
 <meta property="article:author" content="Lenth Dose">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -344,7 +344,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-01-05T14:58:44+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-05T23:11:41+08:00">
                 2020-01-05
               </time>
             
@@ -495,6 +495,49 @@
 <p>在构造一个子类的对象时，父类的构造方法也是会被调用的，而且父类的构造方法在子类的构造方法之前被调用。</p>
 <p>必须将super()写在第一行，因为程序必须先构造父类再构造子类</p>
 <p>不可以用多个super()，因为一个子类只能继承一个父类</p>
+<h4 id="多态变量"><a href="#多态变量" class="headerlink" title="多态变量"></a>多态变量</h4><ul>
+<li>一个变量可以保存其所声明的类型或该类型的任何子类型的对象</li>
+<li>对象变量可以保存其声明的类型的对象，或该类型的任何子类型的对象</li>
+<li><u>Java中保存对象类型的变量时多态变量。“多态”这个术是指一个变量可以保存不同类型（即其声明的类型或任何子类型的对象)</u></li>
+<li>当把子类的对象赋给父类的变量的时候，就发生了向上造型</li>
+</ul>
+<h5 id="子类和子类型"><a href="#子类和子类型" class="headerlink" title="子类和子类型"></a>子类和子类型</h5><ul>
+<li>类定义了类型</li>
+<li>子类定义了子类型</li>
+<li>子类的对象可以被当作父类的对象来使用</li>
+<li>赋值给父类的变量</li>
+<li>传递给需要父类对象的函数</li>
+<li>放进存放父类对象的容器里</li>
+</ul>
+<h5 id="造型cast"><a href="#造型cast" class="headerlink" title="造型cast"></a>造型cast</h5><ul>
+<li>子类的对象可以赋值给父类的对象</li>
+<li>注意！Java中不存在对象对对象的赋值！！</li>
+<li>父类的对象不能赋值给子类的变量！</li>
+<li>可以用造型c=(Car)v强制赋值</li>
+<li>用括号围起类型放在值的前面</li>
+<li>对象本身并没有发生任何变化，所以不是“类型转换”</li>
+<li>运行时有机制来检查这样的转化是否合理</li>
+</ul>
+<h5 id="向上造型"><a href="#向上造型" class="headerlink" title="向上造型"></a>向上造型</h5><ul>
+<li>拿一个子类的对象，当作父类的对象来用</li>
+<li>向上造型是默认的，不需要运算符</li>
+<li>向上造型总是安全的</li>
+</ul>
+<h4 id="绑定"><a href="#绑定" class="headerlink" title="绑定"></a>绑定</h4><ul>
+<li>当通过对象变量调用函数的时候，调用哪个函数这件事情叫做绑定</li>
+<li>静态绑定：根据变量的声明类型来决定</li>
+<li>动态绑定：根据变量的动态类型来决定</li>
+<li>在成员函数中调用其他成员函数也是通过this这个对象变量来调用的</li>
+<li>Java缺省使用动态绑定</li>
+</ul>
+<h4 id="覆盖override"><a href="#覆盖override" class="headerlink" title="覆盖override"></a>覆盖override</h4><ul>
+<li>子类和父类中存在名称和参数表完全相同的函数，这一对函数构成覆盖关系</li>
+<li>通过父类的变量调用存在覆盖关系的函数时，会调用变量当时所管理的对象所属的类的函数</li>
+</ul>
+<h4 id="耦合"><a href="#耦合" class="headerlink" title="耦合"></a>耦合</h4><ul>
+<li>类和类之间的关系称作耦合</li>
+<li>耦合越低越好，保持距离时形成良好代码的关键</li>
+</ul>
 
       
     </div>
@@ -660,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义初始化"><span class="nav-number">2.1.</span> <span class="nav-text">定义初始化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对象和对象之间的联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">对象和对象之间的联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#private"><span class="nav-number">5.1.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#public"><span class="nav-number">5.2.</span> <span class="nav-text">public</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包"><span class="nav-number">6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类变量和类函数"><span class="nav-number">7.</span> <span class="nav-text">类变量和类函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器类"><span class="nav-number">8.</span> <span class="nav-text">容器类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#容器类有两个类型"><span class="nav-number">8.1.</span> <span class="nav-text">容器类有两个类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象数组"><span class="nav-number">9.</span> <span class="nav-text">对象数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hash表"><span class="nav-number">10.</span> <span class="nav-text">Hash表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">11.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子类继承了父类的什么东西"><span class="nav-number">11.1.</span> <span class="nav-text">子类继承了父类的什么东西</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同访问属性的父类成员在子类中的访问属性"><span class="nav-number">11.2.</span> <span class="nav-text">不同访问属性的父类成员在子类中的访问属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义初始化"><span class="nav-number">2.1.</span> <span class="nav-text">定义初始化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对象和对象之间的联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">对象和对象之间的联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#private"><span class="nav-number">5.1.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#public"><span class="nav-number">5.2.</span> <span class="nav-text">public</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包"><span class="nav-number">6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类变量和类函数"><span class="nav-number">7.</span> <span class="nav-text">类变量和类函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器类"><span class="nav-number">8.</span> <span class="nav-text">容器类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#容器类有两个类型"><span class="nav-number">8.1.</span> <span class="nav-text">容器类有两个类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象数组"><span class="nav-number">9.</span> <span class="nav-text">对象数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hash表"><span class="nav-number">10.</span> <span class="nav-text">Hash表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">11.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子类继承了父类的什么东西"><span class="nav-number">11.1.</span> <span class="nav-text">子类继承了父类的什么东西</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同访问属性的父类成员在子类中的访问属性"><span class="nav-number">11.2.</span> <span class="nav-text">不同访问属性的父类成员在子类中的访问属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多态变量"><span class="nav-number">12.</span> <span class="nav-text">多态变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子类和子类型"><span class="nav-number">12.1.</span> <span class="nav-text">子类和子类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#造型cast"><span class="nav-number">12.2.</span> <span class="nav-text">造型cast</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#向上造型"><span class="nav-number">12.3.</span> <span class="nav-text">向上造型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定"><span class="nav-number">13.</span> <span class="nav-text">绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖override"><span class="nav-number">14.</span> <span class="nav-text">覆盖override</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#耦合"><span class="nav-number">15.</span> <span class="nav-text">耦合</span></a></li></ol></div>
             
 
           </div>
