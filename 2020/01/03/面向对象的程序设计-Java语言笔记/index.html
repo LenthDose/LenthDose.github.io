@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="LenthDose">
 <meta property="og:description" content="类是规范，根据类的定义来创建对象 类：就是Java的类型，可以用来定义变量 对象&#x3D;属性+服务 数据：属性或状态 操作：函数 把数据和对数据的操作放在一起—&gt;封装 定义类和定义变量类似，没有什么不同 OOP特性 一切都是对象  程序就是一堆互相发送消息的对象  每个对象都有自己的存储空间，里面是其他的对象  每个对象都有一个类型  所有属于某个特定类型的对象可以提供相同的服务   成员变量 类">
 <meta property="article:published_time" content="2020-01-03T13:46:19.000Z">
-<meta property="article:modified_time" content="2020-01-04T15:20:15.701Z">
+<meta property="article:modified_time" content="2020-01-05T06:58:44.956Z">
 <meta property="article:author" content="Lenth Dose">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -344,8 +344,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-01-04T23:20:15+08:00">
-                2020-01-04
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-05T14:58:44+08:00">
+                2020-01-05
               </time>
             
           </span>
@@ -455,10 +455,46 @@
 <li><p>元素的类型</p>
 </li>
 </ul>
-<h5 id="对象数组"><a href="#对象数组" class="headerlink" title="对象数组"></a>对象数组</h5><p>当数组的元素的类型是类的时候，数组的每一个元素其实只是对象的管理者而不是对象本身。因此，仅仅创建数组并没有创建其中的每一个对象</p>
+<h4 id="对象数组"><a href="#对象数组" class="headerlink" title="对象数组"></a>对象数组</h4><p>当数组的元素的类型是类的时候，数组的每一个元素其实只是对象的管理者而不是对象本身。因此，仅仅创建数组并没有创建其中的每一个对象</p>
 <ul>
 <li>对象数组中的每个元素都是对象的管理者而并非对象本身</li>
 </ul>
+<h4 id="Hash表"><a href="#Hash表" class="headerlink" title="Hash表"></a>Hash表</h4><p>HashMap&lt;Integer, String&gt; 定义名 = new HashMap&lt;Integer, String&gt;()；</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>我们把用来做基础派生其它类的那个类叫做父类、超类或者基类，而派生出来的新类叫做子类。Java用关键字extends表示这种继承/派生关系。</p>
+<p>Java的继承只允许单继承，即一个类只能有一个父类</p>
+<h5 id="子类继承了父类的什么东西"><a href="#子类继承了父类的什么东西" class="headerlink" title="子类继承了父类的什么东西"></a>子类继承了父类的什么东西</h5><ul>
+<li>子类没有继承父类的构造器（构造方法是父类所独有的，因为它们的名字就是类的名字）</li>
+<li>子类不能直接调用父类中的private变量和函数</li>
+<li>子类继承了父类所有的public变量和函数，并且可以在子类中直接访问继承来的父类的public变量和函数</li>
+<li>子类继承了父类的private变量和函数，但不能在子类中直接访问，我们可以通过访问父类中的public方法间接访问它们</li>
+</ul>
+<h5 id="不同访问属性的父类成员在子类中的访问属性"><a href="#不同访问属性的父类成员在子类中的访问属性" class="headerlink" title="不同访问属性的父类成员在子类中的访问属性"></a>不同访问属性的父类成员在子类中的访问属性</h5><table>
+<thead>
+<tr>
+<th>父类成员访问属性</th>
+<th>在父类中的含义</th>
+<th>在子类中的含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>对所有人开放</td>
+<td>对所有人开放</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>只有包内其它类、自己、和子类可以访问</td>
+<td>只有包内其它类、自己、和子类可以访问</td>
+</tr>
+<tr>
+<td>private</td>
+<td>只有自己可以访问</td>
+<td>不能访问</td>
+</tr>
+</tbody></table>
+<p>在构造一个子类的对象时，父类的构造方法也是会被调用的，而且父类的构造方法在子类的构造方法之前被调用。</p>
+<p>必须将super()写在第一行，因为程序必须先构造父类再构造子类</p>
+<p>不可以用多个super()，因为一个子类只能继承一个父类</p>
 
       
     </div>
@@ -624,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义初始化"><span class="nav-number">2.1.</span> <span class="nav-text">定义初始化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对象和对象之间的联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">对象和对象之间的联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#private"><span class="nav-number">5.1.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#public"><span class="nav-number">5.2.</span> <span class="nav-text">public</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包"><span class="nav-number">6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类变量和类函数"><span class="nav-number">7.</span> <span class="nav-text">类变量和类函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器类"><span class="nav-number">8.</span> <span class="nav-text">容器类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#容器类有两个类型"><span class="nav-number">8.1.</span> <span class="nav-text">容器类有两个类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象数组"><span class="nav-number">8.2.</span> <span class="nav-text">对象数组</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#OOP特性"><span class="nav-number">1.</span> <span class="nav-text">OOP特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">2.</span> <span class="nav-text">成员变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义初始化"><span class="nav-number">2.1.</span> <span class="nav-text">定义初始化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地变量"><span class="nav-number">3.</span> <span class="nav-text">本地变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对象和对象之间的联系"><span class="nav-number">4.0.1.</span> <span class="nav-text">对象和对象之间的联系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装"><span class="nav-number">5.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#private"><span class="nav-number">5.1.</span> <span class="nav-text">private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#public"><span class="nav-number">5.2.</span> <span class="nav-text">public</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包"><span class="nav-number">6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类变量和类函数"><span class="nav-number">7.</span> <span class="nav-text">类变量和类函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器类"><span class="nav-number">8.</span> <span class="nav-text">容器类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#容器类有两个类型"><span class="nav-number">8.1.</span> <span class="nav-text">容器类有两个类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象数组"><span class="nav-number">9.</span> <span class="nav-text">对象数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hash表"><span class="nav-number">10.</span> <span class="nav-text">Hash表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">11.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子类继承了父类的什么东西"><span class="nav-number">11.1.</span> <span class="nav-text">子类继承了父类的什么东西</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同访问属性的父类成员在子类中的访问属性"><span class="nav-number">11.2.</span> <span class="nav-text">不同访问属性的父类成员在子类中的访问属性</span></a></li></ol></li></ol></div>
             
 
           </div>
