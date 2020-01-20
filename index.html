@@ -1395,8 +1395,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-01-20T18:11:39+08:00">
-                2020-01-20
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-21T00:40:20+08:00">
+                2020-01-21
               </time>
             
           </span>
@@ -1434,6 +1434,7 @@
             <h4 id="创建一个Android项目"><a href="#创建一个Android项目" class="headerlink" title="创建一个Android项目"></a>创建一个Android项目</h4><p>问题：新版和旧版差别太大，想要运行项目，必须要在Project Structure里的Moudle设置之后apply</p>
 <hr>
 <h4 id="探究活动"><a href="#探究活动" class="headerlink" title="探究活动"></a>探究活动</h4><h5 id="活动是什么？"><a href="#活动是什么？" class="headerlink" title="活动是什么？"></a>活动是什么？</h5><p>活动是最容易吸引用户的地方，它是一种可以包含用户界面的组件，主要是用于和用户进行交互</p>
+<hr>
 <h5 id="活动的基本用法"><a href="#活动的基本用法" class="headerlink" title="活动的基本用法"></a>活动的基本用法</h5><ul>
 <li><p>手动创建活动</p>
 </li>
@@ -1441,18 +1442,26 @@
 <p>在app/src/main/res目录里—&gt;New—&gt;Directory</p>
 <p>在创建的目录中—&gt;New—&gt;Layout resource file 默认选择为LinerLayout</p>
 <p>添加按钮 添加代码为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line"></span><br><span class="line">​	android:id&#x3D;&quot;@+id&#x2F;button_&quot;   可在button_后自定义</span><br><span class="line">    android:layout_width&#x3D;&quot;match_parent&quot;</span><br><span class="line">    android:layout_heigth&#x3D;&quot;wrap_content&quot;</span><br><span class="line">    android:text&#x3D;&quot;Button &quot;       可在后自定义</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">	android:id&#x3D;&quot;@+id&#x2F;button_&quot;   可在button_后自定义</span><br><span class="line">    android:layout_width&#x3D;&quot;match_parent&quot;</span><br><span class="line">    android:layout_heigth&#x3D;&quot;wrap_content&quot;</span><br><span class="line">    android:text&#x3D;&quot;Button &quot;       可在后自定义</span><br></pre></td></tr></table></figure>
 
-<p>在Java文件中修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class FirstActvity extends AppCompatActivity&#123;</span><br><span class="line">	@Override</span><br><span class="line">	protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line">	super.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.first_layout);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; </span><br><span class="line">想要调用R.layout.文件名即可</span><br></pre></td></tr></table></figure>
+
 </li>
+</ul>
+<p>​        在Java文件中修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class FirstActvity extends AppCompatActivity&#123;</span><br><span class="line">	@Override</span><br><span class="line">	protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line">	super.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.first_layout);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; </span><br><span class="line">想要调用R.layout.文件名即可</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>在AndroidMainfest文件中注册</p>
 <p>想要启动活动需要在&lt;activity&gt;标签的内部加入&lt;intent-filter&gt;标签，并在这个标签里添加两句声明</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;action android:name&#x3D;&quot;android.intent.action.MAIN&quot;&#x2F;&gt;</span><br><span class="line">&lt;category android:name&#x3D;&quot;android.intent.category.LAUNCHER&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>还可以使用android:label指定活动中标题栏的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android：label&#x3D;&quot;This is FirstActivity&quot;   可自定义文本内容</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:label&#x3D;&quot;This is FirstActivity&quot;   可自定义文本内容</span><br></pre></td></tr></table></figure>
+
+<hr>
 </li>
+</ul>
+<ul>
 <li><p>在活动中使用Toast</p>
 <p>在onCreate()中添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line">	super.onCreate(savedInstanceState);</span><br><span class="line">	setContentView(R.layout.first_layout);</span><br><span class="line">	Button button1 &#x3D; findViewById(R.id.button_1);      新版本可不用加上(Button)强制类型转换</span><br><span class="line">	buttton1.setOnClickListener(new View.OnClickListener())&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick(View v)&#123;</span><br><span class="line">		Toast.makeText(FirstActivity.this, &quot;You clicked Button 1&quot;,</span><br><span class="line">			Toast.LENGTH_SHORT).show();</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
@@ -1460,8 +1469,44 @@
 <p>通过findViewById()方法获取到在布局文件中定义的元素</p>
 <p>通过调用setOnClickListener()方法为按钮注册一个监听器</p>
 <p>通过静态方法makeText()创建出一个Toast对象，然后调用show()显示</p>
-<p>makeText()方法需要传入3个参数：第一个参数是Context，也就是Toast要求的上下文，由于活动本身就是一个Context对象，可以直接传入FirstActvity.this。第二个参数是Toast显示的文本内容，第三个参数是Toast显示的时长，有两个内置常量可以选择short或long</p>
+<p>makeText()方法需要传入3个参数：</p>
+<p>第一个参数是Context，也就是Toast要求的上下文，由于活动本身就是一个Context对象，可以直接传入FirstActvity.this。</p>
+<p>第二个参数是Toast显示的文本内容。</p>
+<p>第三个参数是Toast显示的时长，有两个内置常量可以选择short或long。</p>
+<hr>
 </li>
+</ul>
+<ul>
+<li><p>在活动中使用Menu</p>
+<p>在res目录下新建一个menu文件夹，接着New—&gt;Menu resource file  文件名输入main，然后在main.xml中添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;menu xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com.&#x2F;apk&#x2F;res&#x2F;android&quot;&gt;</span><br><span class="line">	&lt;item</span><br><span class="line">		android:id&#x3D;&quot;@+id&#x2F;add_item&quot;</span><br><span class="line">		android:title&#x3D;&quot;Add&quot;&#x2F;&gt;</span><br><span class="line">	&lt;item</span><br><span class="line">		android:id&#x3D;&quot;@+id&#x2F;remove_item&quot;</span><br><span class="line">		android:title&#x3D;&quot;Remove&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;menu&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&lt;item&gt;标签就是用来创建具体的某一个菜单项，然后通过android:id给这个菜单项指定一个唯一 的标识符，通过android:title给这个菜单项指定一个名称</p>
+<hr>
+<p>接着在Java文件中重写onCreateOptionsMenu()方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public boolean onCreateOptionsMenu(Menu menu)&#123;</span><br><span class="line">	getMenuInflater().inflate(R.menu.main, menu);</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过getMenuInflater()方法能够得到MenuInflater对象，再调用它的inflater()方法就可以给当前活动创建菜单了。</p>
+<p>inflate()方法接受两个参数：</p>
+<p>第一个参数用于指定我们通过哪一个资源文件来创建菜单，例如R.menu.main</p>
+<p>第二个参数用于指定我们的菜单项将添加哪一个对象到哪一个Menu对象中，这里直接使用onCreateOptionsMenu()方法传入的menu参数。然后给这个方法返回true，表示允许创建的菜单显示出来，如果返回了false，创建的菜单将无法显示。</p>
+<hr>
+<p>当然，仅此还不够，要想让菜单响应，需要再java文件中重写onOptionItemSelected()方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public boolean onOptionItemSelected(MenuItem item)&#123;</span><br><span class="line">	switch(item.getItemId())&#123;</span><br><span class="line">	case R.id.add_item:</span><br><span class="line">		Toast.makeText(this, &quot;You clicked Add&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">		break;</span><br><span class="line">	case R.id.remove_item:</span><br><span class="line">		Toast.makeText(this, &quot;You clicked Remove&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">		break;</span><br><span class="line">        default;</span><br><span class="line">	&#125;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在onOptionItemSelected()方法中，通过调用item.getItemId()来判断我们点击的是哪一个菜单项，然后给每个菜单项加入自己的逻辑处理</p>
+<hr>
+</li>
+<li><p>销毁一个活动</p>
+<p>修改按钮监听器中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick(View v)&#123;</span><br><span class="line">		finish();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>​    </p>
+</li>
+</ul>
+<h4 id="使用Intent在活动之间穿梭"><a href="#使用Intent在活动之间穿梭" class="headerlink" title="使用Intent在活动之间穿梭"></a>使用Intent在活动之间穿梭</h4><ul>
+<li>使用显示Intent</li>
 </ul>
 
           
