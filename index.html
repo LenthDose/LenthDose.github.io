@@ -1395,7 +1395,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-01-21T00:40:20+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-21T12:16:07+08:00">
                 2020-01-21
               </time>
             
@@ -1506,7 +1506,42 @@
 </li>
 </ul>
 <h4 id="使用Intent在活动之间穿梭"><a href="#使用Intent在活动之间穿梭" class="headerlink" title="使用Intent在活动之间穿梭"></a>使用Intent在活动之间穿梭</h4><ul>
-<li>使用显示Intent</li>
+<li><p>使用显示Intent</p>
+<p>Intent有多个构造函数的重载，其中一个是Intent(Context packageContent, Class&lt;?&gt;cls)。这个构造函数接收两个参数，第一个参数Context要求提供一个启动活动的上下文，第二个参数class则是指定想要启动的目标活动，通过这个构造函数就可以构建出Intent的“意图”。</p>
+<p>使用这个Intent：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick(View v)&#123;</span><br><span class="line">		Intent intent &#x3D; new Intent(FirstActivity.this, SecondActivity.class);</span><br><span class="line">		startActivity(intent);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+</li>
+</ul>
+<ul>
+<li><p>使用隐式Intent</p>
+<p>打开AndroidMainfest.xml，添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name&#x3D;&quot;.SecondActivity&quot; &gt;</span><br><span class="line">	&lt;intent_filter&gt;</span><br><span class="line">		&lt;action android:name&#x3D;&quot;com.example.activitytest.ACTION_START&quot; &#x2F;&gt;</span><br><span class="line">		&lt;category android:name&#x3D;&quot;android.intent.category.DEFAULT&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;intent_filter&gt;</span><br><span class="line">&lt;&#x2F;activity&gt;</span><br></pre></td></tr></table></figure>
+
+<p>只有&lt;action&gt;和&lt;category&gt;中的内容同时能够匹配上Intent中指定的action和category时，这个活动才能响应该Intent</p>
+<hr>
+<p>接着修改Java文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick(View v)&#123;</span><br><span class="line">		Intent intent &#x3D; new Intent(&quot;com.example.activitytest.ACTION_START&quot;);</span><br><span class="line">		startActivity(intent);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>android.intent.category.DEFAULT是一种默认的category，在调用startActivity()方法的时候会自动将这个category添加到Intent中。</p>
+<hr>
+<p>每个Intent中只能指定一个action，却能指定多个category。增加多一个category：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick(View v)&#123;</span><br><span class="line">		Intent intent &#x3D; new Intent(&quot;com.example.activitytest.ACTION_START&quot;);</span><br><span class="line">		intent.addCategory(&quot;com.example.activitytest.MY_CATEGORY&quot;);</span><br><span class="line">		startActivity(intent);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>增加后要记得在xml文件中注册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name&#x3D;&quot;.SecondActivity&quot; &gt;</span><br><span class="line">	&lt;intent_filter&gt;</span><br><span class="line">		&lt;action android:name&#x3D;&quot;com.example.activitytest.ACTION_START&quot; &#x2F;&gt;</span><br><span class="line">		&lt;category android:name&#x3D;&quot;android.intent.category.DEFAULT&quot; &#x2F;&gt;</span><br><span class="line">		&lt;category android:name&#x3D;&quot;com.example.activitytest.MY_CATEGORY&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;intent_filter&gt;</span><br><span class="line">&lt;&#x2F;activity&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+</li>
+<li><p>更多隐式Intent的用法                                                                                       </p>
+<p>想要调用系统的浏览器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">button1.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick(View v)&#123;</span><br><span class="line">		Intent intent &#x3D; new Intent(Intent.ACTION_VIEW);</span><br><span class="line">		intent.setData(Uri.parse(&quot;http:&#x2F;&#x2F;www.baidu.com&quot;));</span><br><span class="line">		startActivity(intent);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+</li>
+<li><p>向下一个活动传递数据</p>
+</li>
 </ul>
 
           
